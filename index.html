@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HR Policy Assistant – Acme Corp</title>
+    <meta
+      name="description"
+      content="Ask anything about Acme Corp HR policies – leave, WFH, probation, notice period, reimbursements and more."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+
+  <body>
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-wrap">
+          <div class="logo-icon">⚡</div>
+          <div>
+            <div class="logo-name">Acme Corp</div>
+            <div class="logo-sub">HR Assistant</div>
+          </div>
+        </div>
+        <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">✕</button>
+      </div>
+
+      <div class="sidebar-section-label">Quick Questions</div>
+      <nav class="quick-questions" id="quickQuestions">
+        <button class="quick-btn" data-q="How many paid annual leave days do I get?">
+          <span class="quick-icon">🏖️</span>
+          <span>Annual Leave</span>
+        </button>
+        <button class="quick-btn" data-q="What is the work from home policy?">
+          <span class="quick-icon">🏠</span>
+          <span>Work From Home</span>
+        </button>
+        <button class="quick-btn" data-q="What are the probation period rules?">
+          <span class="quick-icon">📋</span>
+          <span>Probation Period</span>
+        </button>
+        <button class="quick-btn" data-q="What is the notice period for resignation?">
+          <span class="quick-icon">📝</span>
+          <span>Notice Period</span>
+        </button>
+        <button class="quick-btn" data-q="How do I claim reimbursement for expenses?">
+          <span class="quick-icon">💰</span>
+          <span>Reimbursements</span>
+        </button>
+        <button class="quick-btn" data-q="What is the code of conduct policy?">
+          <span class="quick-icon">⚖️</span>
+          <span>Code of Conduct</span>
+        </button>
+        <button class="quick-btn" data-q="How many public holidays does the company observe?">
+          <span class="quick-icon">🎉</span>
+          <span>Holidays</span>
+        </button>
+        <button class="quick-btn" data-q="What is the exit and clearance process?">
+          <span class="quick-icon">🚪</span>
+          <span>Exit Policy</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="clear-btn" id="clearChat">
+          <span>🗑️</span> Clear Chat
+        </button>
+        <p class="footer-note">Powered by LangChain &amp; Groq</p>
+      </div>
+    </aside>
+
+    <!-- ===== MAIN PANEL ===== -->
+    <div class="main" id="main">
+      <!-- Top bar -->
+      <header class="topbar">
+        <button class="hamburger" id="hamburger" aria-label="Open sidebar">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="topbar-title">
+          <span class="topbar-icon">🤖</span>
+          <span>HR Policy Assistant</span>
+        </div>
+        <div class="status-pill" id="statusPill">
+          <span class="status-dot" id="statusDot"></span>
+          <span id="statusText">Connecting…</span>
+        </div>
+      </header>
+
+      <!-- Chat window -->
+      <div class="chat-window" id="chatWindow">
+        <!-- Welcome message inserted by JS -->
+      </div>
+
+      <!-- Input bar -->
+      <div class="input-bar">
+        <div class="input-wrap">
+          <textarea
+            id="questionInput"
+            class="question-input"
+            placeholder="Ask about leave, WFH, probation, notice period…"
+            rows="1"
+            aria-label="Your question"
+          ></textarea>
+          <button class="send-btn" id="sendBtn" aria-label="Send question">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+        <p class="input-hint">Press <kbd>Enter</kbd> to send &nbsp;·&nbsp; <kbd>Shift+Enter</kbd> for new line</p>
+      </div>
+    </div>
+
+    <!-- Overlay for mobile sidebar -->
+    <div class="overlay" id="overlay"></div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
